@@ -18,16 +18,31 @@ class Game {
         this.activePhrase = 'null'; //this is the phrase object currently in play
     }
 
-    /**
-    * Selects random phrase from phrases property
-    * @return {Object} Phrase object chosen to be used
-     */
-   getRandomPhrase() {
+    // * Selects random phrase from phrases property
+    // * @return {Object} Phrase object chosen to be used
+    getRandomPhrase() {
 
-    const randomIndex = Math.floor(Math.random() * this.phrases.length);
-    const randomPhrase = this.phrases[randomIndex];
-    return randomPhrase;
+        const randomIndex = Math.floor(Math.random() * this.phrases.length);
+        const randomPhrase = this.phrases[randomIndex];
+        return randomPhrase;
 
     };
+
+    //Begins game by selecting a random phrase and displaying it to user
+    startGame() {
+
+       const overlay = document.getElementById('overlay');
+       overlay.style.display = 'none';
+       this.activePhrase = this.getRandomPhrase();
+       this.activePhrase.addPhraseToDisplay();
+
+    }
+
+    
+
+    handleInteraction() {
+    
+    }
+
 };
 
