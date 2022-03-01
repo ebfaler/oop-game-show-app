@@ -43,15 +43,13 @@ class Phrase {
         const phraseLetters = document.querySelectorAll('#phrase li');
 
         for (let i = 0; i < phraseLetters.length; i++) {
-            if (phraseLetters[i].textContent.toLowerCase() === chosenLetter.textContent) {
+            if (phraseLetters[i].textContent.toLowerCase() === chosenLetter) {
                 phraseLetters[i].classList.add('show');
             }
         }
     }
 
 
-
-
-
 };
+
 
