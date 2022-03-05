@@ -65,6 +65,11 @@ button {
 	margin: 0 auto;
 }
 
+#btn__reset:hover {
+  width: 220px;
+  height: 60px;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -72,6 +77,7 @@ button {
   height: 100%;
   max-height: 900px;
   text-align: center;
+  background-color: #d7f0f5;
 }
 
 .section {
@@ -87,6 +93,8 @@ button {
 
 .header {
   color: #3a3f58;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 50px;
 }
 
 
@@ -118,8 +126,10 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  /* -webkit-animation-duration: .5s;
+  animation-duration: .5s; */
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
 }
 
 
@@ -166,7 +176,7 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: #ffffff;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -177,10 +187,24 @@ button {
 
 .title {
   color: #FFF;
+  font-family: 'Courier New', Courier, monospace;
+  animation: fadeIn 5s;
+  -webkit-transform: fadeIn 5s;
+  -moz-transform: fadeIn 5s;
+  -ms-transform: fadeIn 5s;
+  -o-transform: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  50% {opacity: 0.5;}
+  100% {opacity:1;}
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #49709e;
+  
 }
 
 .start a {

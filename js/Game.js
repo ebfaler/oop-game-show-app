@@ -62,9 +62,10 @@ class Game {
 
         const liveHearts = document.querySelectorAll('.tries img');
         liveHearts[this.missed].src = 'images/lostHeart.png';
-        this.missed++;
+        this.missed ++;
         if (this.missed > 4) {
             this.gameOver("lose");
+            
         }
     }
 
@@ -81,6 +82,7 @@ class Game {
             gameOverMessage.innerHTML = "Congratulations. You have Won!";
             startOverlay.classList.remove('start');
             startOverlay.classList.add('win');
+            this.resetGame();
 
 
         }
@@ -88,10 +90,48 @@ class Game {
             gameOverMessage.innerHTML = "Unfortunately, you haven't won this time!";
             startOverlay.classList.remove('start');
             startOverlay.classList.add('lose');
+            this.resetGame();
 
         }
 
     }
+
+
+
+
+    /* Remove all `li` elements from the Phrase `ul` element.
+     * Enable all of the onscreen keyboard buttons and update each to use the `key` CSS
+      class, and not use the `chosen` or `wrong` CSS classes.
+     * Reset all of the heart images in the scoreboard at the bottom of
+      the gameboard to display the `liveHeart.png` image. */
+    resetGame() {
+        this.missed = 0;
+        startButton.textContent = "Reset Game";
+        const list = document.querySelector('#phrase ul');
+        list.textContent = '';
+
+        const chosenLetters = document.querySelectorAll('.chosen');
+        const wrongLetters = document.querySelectorAll('.wrong');
+
+        for (let i = 0; i < chosenLetters.length; i++) {
+            chosenLetters[i].classList.remove('chosen');
+            chosenLetters[i].disabled = false;
+        }
+
+        for (let i = 0; i < wrongLetters.length; i++) {
+            wrongLetters[i].classList.remove('wrong');
+            wrongLetters[i].disabled = false;
+        }
+
+        const hearts = document.querySelectorAll('.tries img');
+
+        for (let i = 0; i < hearts.length; i++) {
+            hearts[i].src = 'images/liveHeart.png';
+
+        }
+    }
+
+
     /*
     Handles onscreen keyboard button clicks
     
@@ -99,6 +139,7 @@ class Game {
     keyboard button clicked by the player matches a letter in the phrase
     and then directs the game based on a correct or incorrect guess.
     */
+
     handleInteraction(button) {
 
         //disables the button after it's clicked
@@ -115,6 +156,7 @@ class Game {
 
             if (this.checkForWin()) {
                 this.gameOver("win");
+                
             }
         }
 
