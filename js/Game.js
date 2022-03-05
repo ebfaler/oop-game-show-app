@@ -80,16 +80,14 @@ class Game {
 
         if (result === "win") {
             gameOverMessage.innerHTML = "Congratulations. You have Won!";
-            startOverlay.classList.remove('start');
-            startOverlay.classList.add('win');
+            startOverlay.className= 'win';
             this.resetGame();
 
 
         }
         else if (result === "lose") {
             gameOverMessage.innerHTML = "Unfortunately, you haven't won this time!";
-            startOverlay.classList.remove('start');
-            startOverlay.classList.add('lose');
+            startOverlay.className= 'lose';
             this.resetGame();
 
         }
