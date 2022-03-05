@@ -14,3 +14,4 @@ For Exceeds Requirements:
   * Making the start button increase in size on hover.
   * Changing the background color of the start overlay and of the main game overlay.
 
+Link to live project: https://ebfaler.github.io/oop-game-show-app/
