@@ -95,13 +95,13 @@ class Game {
     }
 
 
-
-
-    /* Remove all `li` elements from the Phrase `ul` element.
+    /* 
+     *Remove all `li` elements from the Phrase `ul` element.
      * Enable all of the onscreen keyboard buttons and update each to use the `key` CSS
       class, and not use the `chosen` or `wrong` CSS classes.
      * Reset all of the heart images in the scoreboard at the bottom of
-      the gameboard to display the `liveHeart.png` image. */
+      the gameboard to display the `liveHeart.png` image. 
+    */
     resetGame() {
         this.missed = 0;
         startButton.textContent = "Reset Game";
