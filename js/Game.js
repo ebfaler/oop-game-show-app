@@ -15,7 +15,7 @@ class Game {
             new Phrase('The only way is up')
         ];
         // console.log(this.phrases.length);
-        this.activePhrase = 'null'; //this is the phrase object currently in play
+        this.activePhrase = null; //this is the phrase object currently in play
     }
 
     // * Selects random phrase from phrases property

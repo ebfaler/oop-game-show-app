@@ -3,10 +3,10 @@
  * app.js */
 
 const startButton = document.getElementById('btn__reset');
-const game = new Game();
+let game;
 
 startButton.addEventListener('click', () => {
-   
+    game = new Game();
     game.startGame();
   
 })
